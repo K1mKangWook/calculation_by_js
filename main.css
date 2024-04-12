@@ -1,0 +1,22 @@
+button.buttonclass {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+input#operator {
+    text-align: center;
+    
+    width : 100px;
+    height : 100px;
+    margin : 5px;
+    
+}
+
+input#operand {
+    text-align: right;
+
+    width : 330px;
+    height : 100px;
+    margin : 5px;
+}

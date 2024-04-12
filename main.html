@@ -1,0 +1,260 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./main.css">
+    </head>
+
+    <body>
+        <div>
+
+            <input readonly type="text" id = 'operator'>
+            <input readonly type="number" id = 'operand'>
+        </div>
+
+        <div>
+            <button class = "buttonclass" id="seven">7</button>
+            <button class = "buttonclass" id="eight">8</button>
+            <button class = "buttonclass" id="nine">9</button>
+            <button class = "buttonclass" id="plus">+</button>
+        </div>
+
+        <div>
+            <button class = "buttonclass" id="four">4</button>
+            <button class = "buttonclass" id="five">5</button>
+            <button class = "buttonclass" id="six">6</button>
+            <button class = "buttonclass" id="minus">-</button>
+        </div>
+
+        <div>
+            <button class = "buttonclass" id="one">1</button>
+            <button class = "buttonclass" id="two">2</button>
+            <button class = "buttonclass" id="three">3</button>
+            <button class = "buttonclass" id="multiply">*</button>
+        </div>
+        
+        <div>
+            <button class = "buttonclass" id="clear">clear</button>
+            <button class = "buttonclass" id="zero">0</button>
+            <button class = "buttonclass" id="equal">=</button>
+            <button class = "buttonclass" id="divide">/</button>
+        </div>
+
+        <script>
+            let numFirst = ''; // 계산입력 첫 번째 숫자
+            let numSecond = ''; // 계산입력 두 번째 숫자
+            let op_input = null;
+            let op_op = null;
+            let op_result;
+
+
+            const w_operator = document.querySelector('#operator');
+            const w_operand = document.querySelector('#operand');
+            
+            const w_clear = document.querySelector('#clear');
+            w_clear.addEventListener('click', () => {
+                numFirst = '';
+                numSecond = '';
+                op_input = null;
+                op_op = null;
+
+                w_operator.value = '';
+                w_operand.value = '';
+            });
+
+            const w_plus = document.querySelector('#plus');
+            w_plus.addEventListener('click', ()=> {
+                op_input = '+';
+                w_operator.value = op_input;
+            });
+
+            const w_minus = document.querySelector('#minus');
+            w_minus.addEventListener('click', ()=> {
+                op_input = '-';
+                w_operator.value = op_input;
+            });
+
+            const w_multiply = document.querySelector('#multiply');
+            w_multiply.addEventListener('click', ()=> {
+                op_input = '*'
+                w_operator.value = op_input;
+            });
+            
+            const w_divide = document.querySelector('#divide');
+            w_divide.addEventListener('click', () => {
+                op_input = '/';
+                w_operator.value = op_input;
+            });
+
+            const w_equal = document.querySelector('#equal');
+            w_equal.addEventListener('click', () => {
+                op_op = op_input;
+                op_input = '=';
+                w_operator.value = op_input;
+                if ((numFirst !== '') && (numSecond !== '')){
+                if (op_op === '+') {
+                    op_result = parseInt(numFirst) + parseInt(numSecond);
+                    w_operand.value = op_result;
+                    
+                    op_input = null;
+                    op_op = null;
+                    numFirst ='';
+                    numSecond = '';
+                }
+                else if (op_op === '-') {
+                    op_result = parseInt(numFirst) - parseInt(numSecond);
+                    w_operand.value = op_result;
+                    
+                    op_input = null;
+                    op_op = null;
+                    numFirst ='';
+                    numSecond = '';
+                }
+                else if (op_op === '*') {
+                    op_result = parseInt(numFirst) * parseInt(numSecond);
+                    w_operand.value = op_result;
+                    
+                    op_input = null;
+                    op_op = null;
+                    numFirst ='';
+                    numSecond = '';
+                }
+                else if (op_op === '/') {
+                    op_result = parseInt(numFirst) / parseInt(numSecond);
+                    w_operand.value = op_result;
+                    
+                    op_input = null;
+                    op_op = null;
+                    numFirst ='';
+                    numSecond = '';
+                }
+            }
+            } );
+
+
+            const w_zero = document.querySelector('#zero');
+            w_zero.addEventListener('click', ()=>{
+                if (op_input === null) {
+                    numFirst = numFirst + '0';
+                    w_operand.value = numFirst;
+                }
+                else {
+                    numSecond = numSecond + '0';
+                    w_operand.value = numSecond;
+                }
+
+                
+            });
+
+            const w_one = document.querySelector('#one');
+            w_one.addEventListener('click', ()=>{
+                if (op_input === null) {
+                    numFirst = numFirst + '1';
+                    w_operand.value = numFirst;
+                }
+                else {
+                    numSecond = numSecond + '1';
+                    w_operand.value = numSecond;
+                }
+            });
+
+            const w_two = document.querySelector('#two');
+            w_two.addEventListener('click', ()=>{
+                if (op_input === null) {
+                    numFirst = numFirst + '2';
+                    w_operand.value = numFirst;
+                }
+                else {
+                    numSecond = numSecond + '2';
+                    w_operand.value = numSecond;
+                }
+            });
+
+            const w_three = document.querySelector('#three');
+            w_three.addEventListener('click', ()=>{
+                if (op_input === null) {
+                    numFirst = numFirst + '3';
+                    w_operand.value = numFirst;
+                }
+                else {
+                    numSecond = numSecond + '3';
+                    w_operand.value = numSecond;
+                }
+            });
+
+            const w_four = document.querySelector('#four');
+            w_four.addEventListener('click', ()=>{
+                if (op_input === null) {
+                    numFirst = numFirst + '4';
+                    w_operand.value = numFirst;
+                }
+                else {
+                    numSecond = numSecond + '4';
+                    w_operand.value = numSecond;
+                }
+            });
+
+            const w_five = document.querySelector('#five');
+            w_five.addEventListener('click', ()=>{
+                if (op_input === null) {
+                    numFirst = numFirst + '5';
+                    w_operand.value = numFirst;
+                }
+                else {
+                    numSecond = numSecond + '5';
+                    w_operand.value = numSecond;
+                }
+            });
+
+            const w_six = document.querySelector('#six');
+            w_six.addEventListener('click', ()=>{
+                if (op_input === null) {
+                    numFirst = numFirst + '6';
+                    w_operand.value = numFirst;
+                }
+                else {
+                    numSecond = numSecond + '6';
+                    w_operand.value = numSecond;
+                }
+            });
+
+            const w_seven = document.querySelector('#seven');
+            w_seven.addEventListener('click', ()=>{
+                if (op_input === null) {
+                    numFirst = numFirst + '7';
+                    w_operand.value = numFirst;
+                }
+                else {
+                    numSecond = numSecond + '7';
+                    w_operand.value = numSecond;
+                }
+            });
+
+            const w_eight = document.querySelector('#eight');
+            w_eight.addEventListener('click', ()=>{
+                if (op_input === null) {
+                    numFirst = numFirst + '8';
+                    w_operand.value = numFirst;
+                }
+                else {
+                    numSecond = numSecond + '8';
+                    w_operand.value = numSecond;
+                }
+            });
+
+            const w_nine = document.querySelector('#nine');
+            w_nine.addEventListener('click', ()=>{
+                if (op_input === null) {
+                    numFirst = numFirst + '9';
+                    w_operand.value = numFirst;
+                }
+                else {
+                    numSecond = numSecond + '9';
+                    w_operand.value = numSecond;
+                }
+            });
+
+
+        </script>
+    </body>
+
+
+</html>
